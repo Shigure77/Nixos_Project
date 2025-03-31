@@ -11,26 +11,26 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager,... }@inputs: {
+  outputs = { self, nixpkgs, nvf, home-manager, ... }@inputs: {
 
     packages."x86_64-linux".default = 
       (nvf.lib.neovimConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
-	modules = [ ./modules/nixos/default.nix ];
+	      modules = [ ./modules/nixos/default.nix ];
       }).neovim;
 
     nixosConfigurations.baal = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       system = "x86_64-linux";
       modules = [
-        ./nixos/Baal/configuration.nix
-	inputs.home-manager.nixosModules.default
+        ./nixos/baal/configuration.nix
+	      inputs.home-manager.nixosModules.default
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobal.Pkgs = true;
+          #home-manager.useGlobal.Pkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.username = import ./modules/core/default.nix;
+          home-manager.users.username = import ./home-manager/home.nix;
         }
       ];
     };

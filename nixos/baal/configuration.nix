@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, ... }:
 
 {
   imports =
@@ -42,11 +42,13 @@
     enable = true;
     displayManager = {
       gdm.enable = true;
-      gnome.enable = true;
+      gdm.wayland = true;
       autoLogin.enable = true;
       autoLogin.user = "keion";
     };
+    desktopManager.gnome.enable = true;
   };
+
 
   # Configure keymap in X11
   services.xserver.xkb = {

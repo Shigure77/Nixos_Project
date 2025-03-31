@@ -6,6 +6,7 @@
   lib,
   config,
   pkgs,
+  catppuccin,
   ...
 }: {
   # You can import other home-manager modules here
@@ -15,7 +16,7 @@
 
     # Or modules exported from other flakes (such as nix-colors):
 
-    #../modules/home-manager/default.nix
+    ../modules/home-manager/default.nix
   ];
 
   home = {
@@ -31,9 +32,7 @@
   };
 
   home.packages = with pkgs; [ 
-
     vlc 
-
 
   ];
   programs.home-manager.enable = true;

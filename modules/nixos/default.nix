@@ -5,6 +5,7 @@
   # my-module = import ./my-module.nix;
   imports = [
     ./nvf.nix
+    ./catppuccin.nix
   ];
 
 }

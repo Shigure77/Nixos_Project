@@ -31,14 +31,9 @@
   };
 
   home.packages = with pkgs; [ 
-    steam
+
     vlc 
-    networkmanagerapplet
-    killall
-    duf
-    pciutils
-    nfs-utils
-    qdirstat
+
 
   ];
   programs.home-manager.enable = true;

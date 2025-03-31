@@ -24,13 +24,13 @@
       system = "x86_64-linux";
       modules = [
         ./nixos/baal/configuration.nix
-	      inputs.home-manager.nixosModules.default
+	inputs.home-manager.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           #home-manager.useGlobal.Pkgs = true;
-          home-manager.useUserPackages = true;
+          #home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.username = import ./home-manager/home.nix;
+          home-manager.users.keion = import ./home-manager/home.nix;
         }
       ];
     };

@@ -8,6 +8,7 @@
   };
 
   gtk = {
+
     #Below is handled by the cappuccin package 
     #theme.package = pkgs.catppuccin-gtk;
     #theme.name = "Catppuccin-Mocha-Compact-Lavender-dark";
@@ -15,9 +16,14 @@
     cursorTheme.package = pkgs.catppuccin-cursors;
     cursorTheme.name = "mochaLight";
 
+    iconTheme.package = pkgs.whitesur-icon-theme;
+    iconTheme.name = "Whitesur-icon-theme";
+
   };
 
   home.packages = with pkgs; [ 
+    catppuccin-cursors
+    whitesur-icon-theme
     gnomeExtensions.dash-to-dock
     gnomeExtensions.arcmenu
     gnomeExtensions.tiling-shell
@@ -26,6 +32,8 @@
     gnomeExtensions.caffeine
     gnomeExtensions.compiz-windows-effect
     gnomeExtensions.vitals
+    gnomeExtensions.open-bar
+    
   ];
 
   dconf.settings = {
@@ -43,15 +51,26 @@
         "space-bar@luchrioh"
         "clipboard-indicator@tudmotu.com"
         "compiz-windows-effect@hermes83.github.com"
+        "caffeine@patapon.info"
+        "openbar@neuromorph"
 
       ];
     };
-    #"org/gnome/gnome-system-monitor" = {
-    #  show-cpu = true;
+    #not working 
+    #"/org/gnome/desktop/interface/" = {
+    #  color-scheme = "prefer-dark";
     #};
-    #"org/gnome/gnome-user-theme" = {
-    #  enable = true;
-    #};
-  };
 
+    #"/org/gnome/shell/extensions/openbar/" = {
+    #  reloadstyle = "true";
+    #};
+
+    #/org/gnome/shell/extensions/dash-to-dock/background-color
+    #'rgb(24,24,37)'
+
+
+
+
+
+  };  
 }

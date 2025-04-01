@@ -31,8 +31,18 @@
     alacritty.enable = true;
   };
 
+  gtk = {
+    enable = true;
+  };
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+  };
+
   home.packages = with pkgs; [ 
     vlc 
+    dconf-editor
+    dconf2nix
 
   ];
   programs.home-manager.enable = true;

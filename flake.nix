@@ -27,19 +27,19 @@
       modules = [
         ./nixos/baal/configuration.nix
         catppuccin.nixosModules.catppuccin
-	      inputs.home-manager.nixosModules.default
+	#inputs.home-manager.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           #home-manager.useGlobal.Pkgs = true;
           #home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.users.keion = { 
-            import = [
-            ./home-manager/home.nix;
+            imports = [
+            ./home-manager/home.nix
             catppuccin.homeManagerModules.catppuccin
             ];
           };
-        };
+        }
       ];
     };
   };

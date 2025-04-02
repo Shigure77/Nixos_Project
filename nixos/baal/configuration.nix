@@ -8,11 +8,21 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/nixos/default.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.loader.grub = {
+    minegrub-theme = {
+      enable = true;
+      splash = "100% Flakes!";
+      background = "background_options/1.8  - [Classic Minecraft].png";
+      boot-options-count = 4;
+    };
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;

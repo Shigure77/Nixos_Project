@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ...}:
 
 {
   # List your module files here

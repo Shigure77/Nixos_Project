@@ -11,9 +11,11 @@
     };
     nix-colors.url = "github:misterio77/nix-colors";
     catppuccin.url = "github:catppuccin/nix";
+    minegrub-theme.url = "github:Lxtharia/minegrub-theme";
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager, catppuccin, ... }@inputs: {
+  outputs = { self, nixpkgs, nvf, home-manager, catppuccin, stylix, ... }@inputs: {
 
     packages."x86_64-linux".default = 
       (nvf.lib.neovimConfiguration {
@@ -27,7 +29,8 @@
       modules = [
         ./nixos/baal/configuration.nix
         catppuccin.nixosModules.catppuccin
-	#inputs.home-manager.nixosModules.default
+        inputs.minegrub-theme.nixosModules.default
+        stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {
           #home-manager.useGlobal.Pkgs = true;

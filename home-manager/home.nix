@@ -18,6 +18,8 @@
 
     ../modules/home-manager/default.nix
   ];
+  
+  nixpkgs.config.allowUnfree = true;
 
   home = {
     username = "keion";
@@ -36,13 +38,18 @@
   };
   qt = {
     enable = true;
-    platformTheme = "gtk";
+    #Already defined elsewhere?
+    #platformTheme = "gtk";
   };
 
   home.packages = with pkgs; [ 
     vlc 
     dconf-editor
     dconf2nix
+    plex-desktop
+    discord
+    btop
+    
 
   ];
   programs.home-manager.enable = true;

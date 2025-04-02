@@ -4,8 +4,9 @@
   catppuccin = {
     alacritty.enable = true;
     gtk.enable = true;
-    #btop.enable = true;
+    btop.enable = true;
   };
+  stylix.targets.gtk.enable = false;
 
   gtk = {
 
@@ -13,16 +14,18 @@
     #theme.package = pkgs.catppuccin-gtk;
     #theme.name = "Catppuccin-Mocha-Compact-Lavender-dark";
 
-    cursorTheme.package = pkgs.catppuccin-cursors;
-    cursorTheme.name = "mochaLight";
+    #cursorTheme.package = pkgs.catppuccin-cursors.mochaDark;
+    #cursorTheme.name = "Catppuccin-Mocha-Dark-Cursors";
 
     iconTheme.package = pkgs.whitesur-icon-theme;
-    iconTheme.name = "Whitesur-icon-theme";
+    iconTheme.name = "WhiteSur";
 
   };
 
   home.packages = with pkgs; [ 
-    catppuccin-cursors
+    ulauncher
+    #catppuccin-gtk
+    catppuccin-cursors.mochaDark
     whitesur-icon-theme
     gnomeExtensions.dash-to-dock
     gnomeExtensions.arcmenu
@@ -32,8 +35,9 @@
     gnomeExtensions.caffeine
     gnomeExtensions.compiz-windows-effect
     gnomeExtensions.vitals
+    #Open bar has its own configuration that needs exported
     gnomeExtensions.open-bar
-    
+    gnomeExtensions.burn-my-windows
   ];
 
   dconf.settings = {
@@ -53,13 +57,14 @@
         "compiz-windows-effect@hermes83.github.com"
         "caffeine@patapon.info"
         "openbar@neuromorph"
+        "burn-my-windows@schneegans.github.com"
 
       ];
     };
     #not working 
-    #"/org/gnome/desktop/interface/" = {
-    #  color-scheme = "prefer-dark";
-    #};
+    "/org/gnome/desktop/interface/" = {
+      color-scheme = "prefer-dark";
+    };
 
     #"/org/gnome/shell/extensions/openbar/" = {
     #  reloadstyle = "true";

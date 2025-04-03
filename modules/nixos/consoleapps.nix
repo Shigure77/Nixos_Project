@@ -1,4 +1,4 @@
-{ pkgs, ... }
+{ pkgs, ... }:
 {
     
   environment.systemPackages = with pkgs; [
@@ -10,7 +10,7 @@
     oh-my-zsh
     starship #cross console terminal
     fastfetch #display hardware info
-    
+
   ];
 
 

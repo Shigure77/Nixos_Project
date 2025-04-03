@@ -29,6 +29,7 @@
       system = "x86_64-linux";
       modules = [
         ./nixos/baal/configuration.nix
+        ./modules/gaming/steam.nix
         #TODO Change to lenovo-thinkpad-x1-12th-gen when moved to prod
         nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
         catppuccin.nixosModules.catppuccin

@@ -69,7 +69,7 @@
     };
 
     #not working 
-    #"/org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    #"org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
 
     #/org/gnome/shell/extensions/dash-to-dock/background-color

@@ -13,9 +13,10 @@
     catppuccin.url = "github:catppuccin/nix";
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
     stylix.url = "github:danth/stylix";
+    inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager, catppuccin, stylix, ... }@inputs: {
+  outputs = { self, nixpkgs, nvf, home-manager, catppuccin, stylix, nixos-hardware, ... }@inputs: {
 
     packages."x86_64-linux".default = 
       (nvf.lib.neovimConfiguration {
@@ -28,6 +29,8 @@
       system = "x86_64-linux";
       modules = [
         ./nixos/baal/configuration.nix
+        #TODO Change to lenovo-thinkpad-x1-12th-gen when moved to prod
+        nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
         catppuccin.nixosModules.catppuccin
         inputs.minegrub-theme.nixosModules.default
         stylix.nixosModules.stylix

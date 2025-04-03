@@ -1,6 +1,10 @@
 {pkgs, ...}:
 
 {
+  imports = [
+    ./catppuccindconf.nix
+  ];
+
   catppuccin = {
     alacritty.enable = true;
     gtk.enable = true;
@@ -41,6 +45,7 @@
     gnomeExtensions.burn-my-windows
   ];
 
+  dconf.enable = true;
   dconf.settings = {
     "org/gnome/shell" = {
       disable-user-extensions = false;
@@ -61,6 +66,21 @@
         "burn-my-windows@schneegans.github.com"
 
       ];
+      favorite-apps = [
+        "org.gnome.Nautilus.desktop"
+        "io.missioncenter.MissionCenter.desktop"
+        "firefox.desktop"
+        "steam.desktop"
+        "discord.desktop"
+        "Alacritty.desktop"
+        "codium.desktop"
+        "org.flameshot.Flameshot.desktop"
+        "org.gnome.Settings.desktop"
+        "org.gnome.Extensions.desktop"      
+      ];
+
+      last-selected-power-profile = "performance";
+
     };
 
     "org/gnome/desktop/background" = {
@@ -68,12 +88,15 @@
       picture-uri-dark = "file://" + ../../assets/images/nixos-wallpaper-catppuccin.png;
     };
 
+
     #not working 
     #"org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
 
     #/org/gnome/shell/extensions/dash-to-dock/background-color
     #'rgb(24,24,37)'
+
+
 
 
 

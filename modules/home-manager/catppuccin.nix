@@ -5,6 +5,8 @@
     alacritty.enable = true;
     gtk.enable = true;
     btop.enable = true;
+    yazi.enable = true;
+
   };
   stylix.targets.gtk.enable = false;
 
@@ -23,7 +25,6 @@
   };
 
   home.packages = with pkgs; [ 
-    ulauncher
     #catppuccin-gtk
     catppuccin-cursors.mochaDark
     whitesur-icon-theme
@@ -61,14 +62,15 @@
 
       ];
     };
-    #not working 
-    "/org/gnome/desktop/interface/" = {
-      color-scheme = "prefer-dark";
+
+    "org/gnome/desktop/background" = {
+      picture-uri = "file://" + ../../assets/images/nixos-wallpaper-catppuccin.png;
+      picture-uri-dark = "file://" + ../../assets/images/nixos-wallpaper-catppuccin.png;
     };
 
-    #"/org/gnome/shell/extensions/openbar/" = {
-    #  reloadstyle = "true";
-    #};
+    #not working 
+    #"/org/gnome/desktop/interface".color-scheme = "prefer-dark";
+
 
     #/org/gnome/shell/extensions/dash-to-dock/background-color
     #'rgb(24,24,37)'

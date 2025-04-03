@@ -31,8 +31,32 @@
       enable = true; 
     };
     alacritty.enable = true;
-  };
+    bash.enable = true;
+    oh-my-posh = {
+      enable = true;
+      useTheme = "catppuccin_mocha";
+      enableBashIntegration = true;
+    };
+    starship.enable = true;
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
 
+      oh-my-zsh = {
+        enable = true;
+        #plugins = [ "git" "thefuck" ];
+        #theme = "";        
+      };
+
+      shellAliases = {
+        ll = "ls -l";
+        update = "sudo nixos-rebuild switch";
+      };
+    };
+  };
+  
   gtk = {
     enable = true;
   };
@@ -48,8 +72,23 @@
     dconf2nix
     plex-desktop
     discord
-    btop
-    
+    audacity
+    flameshot #screenshots
+    gpu-viewer
+    gparted
+    mission-center #resource monitor
+    wireshark
+
+
+    #Console apps
+    kitty
+    btop #terminal resource monitor
+    yazi #terminal file explorer
+    oh-my-posh
+    zsh
+    oh-my-zsh
+    starship #cross console terminal
+    fastfetch #display hardware info
 
   ];
   programs.home-manager.enable = true;

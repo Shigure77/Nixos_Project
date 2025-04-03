@@ -72,23 +72,7 @@
     dconf2nix
     plex-desktop
     discord
-    audacity
-    flameshot #screenshots
-    gpu-viewer
-    gparted
-    mission-center #resource monitor
-    wireshark
 
-
-    #Console apps
-    kitty
-    btop #terminal resource monitor
-    yazi #terminal file explorer
-    oh-my-posh
-    zsh
-    oh-my-zsh
-    starship #cross console terminal
-    fastfetch #display hardware info
 
   ];
   programs.home-manager.enable = true;

@@ -10,6 +10,9 @@
     mission-center #resource monitor
     wireshark
     flatpak
+    qdirstat
+    file-roller
+    
   ];
 
 }

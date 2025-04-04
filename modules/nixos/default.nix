@@ -7,6 +7,7 @@
     ./catppuccin.nix
     ./consoleapps.nix
     ./desktopapps.nix
+    ./vscode.nix
   ];
 
 }

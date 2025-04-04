@@ -194,7 +194,7 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/arcmenu" = {
       arc-menu-icon = 3;
-      custom-menu-button-icon = "../../assets/images/catppuccin-mocha-rainbow-icon.png";
+      #custom-menu-button-icon = "../../assets/images/catppuccin-mocha-rainbow-icon.png";
       custom-menu-button-icon-size = 24.0;
       distro-icon = 22;
       force-menu-location = "Off";
@@ -203,7 +203,7 @@ with lib.hm.gvariant;
       menu-button-border-color = mkTuple [ false "rgb(145,65,172)" ];
       menu-button-border-radius = mkTuple [ false 20 ];
       menu-button-fg-color = mkTuple [ false "rgb(242,242,242)" ];
-      menu-button-icon = "Custom_Icon";
+      menu-button-icon = "Distro_Icon";
       menu-layout = "Runner";
       override-menu-theme = false;
       position-in-panel = "Left";

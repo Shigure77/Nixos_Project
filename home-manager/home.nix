@@ -70,7 +70,7 @@
     dconf2nix
     plex-desktop
     discord
-
+    
 
   ];
   programs.home-manager.enable = true;

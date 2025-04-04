@@ -85,12 +85,13 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/interface" = {
       accent-color = "blue";
-      color-scheme = "prefer-dark";
+      color-scheme = "default";
       cursor-size = 24;
+      cursor-theme = "catppuccin-mocha-dark-cursors";
       document-font-name = "DejaVu Serif  11";
       font-name = "DejaVu Sans 12";
       gtk-theme = "catppuccin-mocha-mauve-standard+default";
-      icon-theme = "WhiteSur";
+      icon-theme = "WhiteSur-dark";
       monospace-font-name = "DejaVu Sans Mono 12";
       show-battery-percentage = true;
     };
@@ -111,6 +112,10 @@ with lib.hm.gvariant;
       application-id = "org.gnome.Nautilus.desktop";
     };
 
+    "org/gnome/desktop/peripherals/touchpad" = {
+      two-finger-scrolling-enabled = true;
+    };
+
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
@@ -126,6 +131,10 @@ with lib.hm.gvariant;
     "org/gnome/desktop/wm/keybindings" = {
       maximize = [];
       unmaximize = [];
+    };
+
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,maximize,close";
     };
 
     "org/gnome/eog/view" = {
@@ -251,7 +260,7 @@ with lib.hm.gvariant;
       boxcolor = [ "0.118" "0.118" "0.180" ];
       bradius = 30.0;
       bwidth = 2.0;
-      color-scheme = "prefer-dark";
+      color-scheme = "default";
       count1 = 379001;
       count10 = 52;
       count11 = 0;
@@ -357,7 +366,7 @@ with lib.hm.gvariant;
       palette8 = [ "36" "36" "44" ];
       palette9 = [ "28" "36" "44" ];
       pause-reload = false;
-      reloadstyle = true;
+      reloadstyle = false;
       set-notif-position = true;
       shcolor = [ "0.000" "0.000" "0.000" ];
       smbgcolor = [ "0.706" "0.745" "0.996" ];
@@ -389,7 +398,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/extensions/user-theme" = {
-      name = "Stylix";
+      name = lib.mkForce "catppuccin-mocha-lavender-standard+default";
     };
 
     "org/gnome/shell/extensions/vitals" = {
@@ -401,9 +410,13 @@ with lib.hm.gvariant;
       locations = [];
     };
 
+    "org/gnome/tweaks" = {
+      show-extensions-notice = false;
+    };
+
     "org/gtk/gtk4/settings/color-chooser" = {
-      custom-colors = [ (mkTuple [ 9.399999678134918e-2 9.399999678134918e-2 0.14499999582767487 1.0 ]) (mkTuple [ 0.8039215803146362 0.8392156958580017 0.95686274766922 1.0 ]) (mkTuple [ 0.6039999723434448 0.6000000238418579 0.5879999995231628 1.0 ]) (mkTuple [ 0.5690000057220459 0.2549999952316284 0.675000011920929 1.0 ]) (mkTuple [ 0.45490196347236633 0.7803921103477478 0.9254902005195618 1.0 ]) (mkTuple [ 0.3921568691730499 0.6274510025978088 1.0 1.0 ]) (mkTuple [ 9.41176488995552e-2 9.41176488995552e-2 0.14509804546833038 1.0 ]) (mkTuple [ 0.8510000109672546 0.675000011920929 0.6349999904632568 1.0 ]) ];
-      selected-color = mkTuple [ true 0.8039215803146362 0.8392156958580017 0.95686274766922 1.0 ];
+      custom-colors = [ (mkTuple [ 9.4e-2 9.4e-2 0.145 1.0 ]) (mkTuple [ 0.803922 0.839216 0.956863 1.0 ]) (mkTuple [ 0.604 0.6 0.588 1.0 ]) (mkTuple [ 0.569 0.255 0.675 1.0 ]) (mkTuple [ 0.454902 0.780392 0.92549 1.0 ]) (mkTuple [ 0.392157 0.627451 1.0 1.0 ]) (mkTuple [ 9.4118e-2 9.4118e-2 0.145098 1.0 ]) (mkTuple [ 0.851 0.675 0.635 1.0 ]) ];
+      selected-color = mkTuple [ true 0.803922 0.839216 0.956863 1.0 ];
     };
 
     "org/gtk/gtk4/settings/file-chooser" = {

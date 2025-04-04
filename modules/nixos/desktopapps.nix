@@ -9,7 +9,7 @@
     gparted
     mission-center #resource monitor
     wireshark
-
+    flatpak
   ];
 
 }

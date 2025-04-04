@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, lib, ...}:
 
 {
   imports = [
@@ -23,8 +23,8 @@
     #cursorTheme.package = pkgs.catppuccin-cursors.mochaDark;
     #cursorTheme.name = "Catppuccin-Mocha-Dark-Cursors";
 
-    iconTheme.package = pkgs.whitesur-icon-theme;
-    iconTheme.name = "WhiteSur";
+    #iconTheme.package = pkgs.whitesur-icon-theme;
+    #iconTheme.name = "WhiteSur";
 
   };
 
@@ -43,6 +43,7 @@
     #Open bar has its own configuration that needs exported
     gnomeExtensions.open-bar
     gnomeExtensions.burn-my-windows
+    gnome-tweaks
   ];
 
   dconf.enable = true;
@@ -90,7 +91,7 @@
 
 
     #not working 
-    #"org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    "org/gnome/desktop/interface".color-scheme = lib.mkForce "prefer-dark";
 
 
     #/org/gnome/shell/extensions/dash-to-dock/background-color

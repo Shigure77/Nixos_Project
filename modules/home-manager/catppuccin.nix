@@ -14,20 +14,6 @@
   };
   stylix.targets.gtk.enable = false;
 
-  gtk = {
-
-    #Below is handled by the cappuccin package 
-    #theme.package = pkgs.catppuccin-gtk;
-    #theme.name = "Catppuccin-Mocha-Compact-Lavender-dark";
-
-    #cursorTheme.package = pkgs.catppuccin-cursors.mochaDark;
-    #cursorTheme.name = "Catppuccin-Mocha-Dark-Cursors";
-
-    #iconTheme.package = pkgs.whitesur-icon-theme;
-    #iconTheme.name = "WhiteSur";
-
-  };
-
   home.packages = with pkgs; [ 
     #catppuccin-gtk
     catppuccin-cursors.mochaDark
@@ -40,7 +26,6 @@
     gnomeExtensions.caffeine
     gnomeExtensions.compiz-windows-effect
     gnomeExtensions.vitals
-    #Open bar has its own configuration that needs exported
     gnomeExtensions.open-bar
     gnomeExtensions.burn-my-windows
     gnome-tweaks
@@ -89,18 +74,7 @@
       picture-uri-dark = "file://" + ../../assets/images/nixos-wallpaper-catppuccin.png;
     };
 
-
-    #not working 
     "org/gnome/desktop/interface".color-scheme = lib.mkForce "prefer-dark";
-
-
-    #/org/gnome/shell/extensions/dash-to-dock/background-color
-    #'rgb(24,24,37)'
-
-
-
-
-
 
 
   };  

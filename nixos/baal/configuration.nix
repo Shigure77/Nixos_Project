@@ -53,8 +53,8 @@
     displayManager = {
       gdm.enable = true;
       gdm.wayland = true;
-      autoLogin.enable = true;
-      autoLogin.user = "keion";
+      #autoLogin.enable = true;
+      #autoLogin.user = "keion";
     };
     desktopManager.gnome.enable = true;
   };

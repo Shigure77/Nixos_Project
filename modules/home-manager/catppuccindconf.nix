@@ -194,7 +194,7 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/arcmenu" = {
       arc-menu-icon = 3;
-      custom-menu-button-icon = "/home/keion/Downloads/catppuccin-mocha-rainbow.png";
+      custom-menu-button-icon = "../../assets/images/catppuccin-mocha-rainbow-icon.png";
       custom-menu-button-icon-size = 24.0;
       distro-icon = 22;
       force-menu-location = "Off";
